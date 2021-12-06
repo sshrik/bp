@@ -40,10 +40,17 @@ const commonConfigs = {
         },
       },
       {
-        test: /\.(png|svg|jpg|gif|jpeg)$/,
+        test: /\.(png|jpg|gif|jpeg)$/,
         loader: 'file-loader',
         options: {
           name: 'static/media/[name].[ext]',
+        },
+      },
+      {
+        test: /\.svg$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'svg-react-loader',
         },
       },
       {

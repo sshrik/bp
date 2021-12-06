@@ -1,6 +1,6 @@
-import React from 'react';
-import logoImage from 'assets/app-logo.png';
+import React, { useState } from 'react';
 import styled from 'styled-components';
+import MovingLogo from 'components/MovingLogo';
 
 const Container = styled.div`
   width: 100vw;
@@ -46,9 +46,11 @@ const Container = styled.div`
 `;
 
 const App: React.FC = () => {
+  const [clicked, setClicked] = useState(false);
+
   return (
     <Container>
-      <img className="app-logo" src={logoImage} />
+      <MovingLogo clicked={clicked} setClicked={setClicked} />
       <div className="project-information">
         <p className="project-header">이제 프로젝트를 시작할 수 있습니다.</p>
         <div className="project-detail">
