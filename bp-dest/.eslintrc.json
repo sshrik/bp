@@ -1,0 +1,72 @@
+{
+  "env" : {
+    "browser": true
+  },
+  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "extends": [
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended", 
+    "plugin:prettier/recommended",
+    "airbnb-base"],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "comma-dangle": "off",
+    "no-use-before-define": "error",
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "import/order": [
+      "error", 
+      {
+        "pathGroups": [
+          {
+            "pattern": "./**",
+            "group": "object"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "groups": ["builtin", "external", "parent", "sibling", "index", "type"],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-restricted-imports": [
+      "error", 
+      {
+        "patterns": ["..*"]
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportNamespaceSpecifier"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
