@@ -1,0 +1,51 @@
+{
+  "env" : {
+    "browser": true
+  },
+  "plugins": ["prettier"],
+  "extends": [
+    "plugin:prettier/recommended",
+    "airbnb-base"],
+  "rules": {
+    "comma-dangle": "off",
+    "no-use-before-define": "error",
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "import/order": [
+      "error", 
+      {
+        "pathGroups": [
+          {
+            "pattern": "./**",
+            "group": "object"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "groups": ["builtin", "external", "parent", "sibling", "index", "type"],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/extensions": "off",
+    "no-restricted-imports": [
+      "error", 
+      {
+        "patterns": ["..*"]
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportNamespaceSpecifier"
+      }
+    ]
+  }
+}
