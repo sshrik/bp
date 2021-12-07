@@ -2,7 +2,7 @@
   "name": "@sshrik/bp",
   "homepage": "https://github.com/sshrik/bp#readme",
   "author": "sshrik <chj878194@naver.com>",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Basic Typescript React Boiler plate.",
   "scripts": {
     "bp": "node build-tools.js"
