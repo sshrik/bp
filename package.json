@@ -1,8 +1,20 @@
 {
-  "name": "bp",
-  "version": "0.1.0",
-  "dependencies": {},
-  "scripts": {},
+  "name": "@sshrik/bp",
+  "homepage": "https://github.com/sshrik/bp#readme",
+  "author": "sshrik <chj878194@naver.com>",
+  "version": "0.1.1",
+  "description": "Basic Typescript React Boiler plate.",
+  "scripts": {
+    "bp": "node build-tools.js"
+  },
+  "bin": {
+    "bp": "./build-tools.js"
+  },
+  "bugs": {
+    "url": "https://github.com/sshrik/bp/issues",
+    "email": "chj878194@naver.com"
+  },
+  "license": "MIT",
   "type": "module",
   "devDependencies": {
     "eslint": "^8.3.0",
