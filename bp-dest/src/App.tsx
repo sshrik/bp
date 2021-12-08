@@ -39,7 +39,6 @@ const Container = styled.div`
     a,
     a:link,
     a:visited {
-      text-decoration: none;
       color: #3988ff;
     }
   }
@@ -55,7 +54,7 @@ const App: React.FC = () => {
         <p className="project-header">이제 프로젝트를 시작할 수 있습니다.</p>
         <div className="project-detail">
           <p>project setted by</p>
-          <a href="#">@sshrik/bp</a>
+          <a href="https://www.npmjs.com/package/@sshrik/bp">@sshrik/bp</a>
         </div>
       </div>
     </Container>
