@@ -25,6 +25,6 @@ yarn lint:fix # lint 고치기
 
 * Typescript
 * ES Lint + Prettier
-* React
+* React + React Router
 * styled-component
 * Webpack

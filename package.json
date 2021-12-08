@@ -2,7 +2,7 @@
   "name": "@sshrik/bp",
   "homepage": "https://github.com/sshrik/bp#readme",
   "author": "sshrik <chj878194@naver.com>",
-  "version": "0.1.3",
+  "version": "0.1.4",
   "keywords": ["boiler plate", "typescript", "react"],
   "description": "Basic Typescript React Boiler plate.",
   "scripts": {
