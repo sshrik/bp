@@ -7,6 +7,10 @@ export const dependencies = [
     name: 'react-dom',
     version: '^17.0.2',
   },
+  {
+    name: 'react-router-dom',
+    version: '^6.0.2',
+  },
 ];
 
 export const scripts = [
@@ -58,6 +62,10 @@ export const devDependencies = [
   {
     name: '@types/react-dom',
     version: '^17.0.11',
+  },
+  {
+    name: '@types/react-router-dom',
+    version: '^5.3.2',
   },
   {
     name: '@types/styled-components',
