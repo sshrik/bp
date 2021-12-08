@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 import fs from 'fs';
-import path from 'path';
+import path, { dirname } from 'path';
 import { dependencies, scripts, devDependencies } from './packageList.js';
 
 function makePackage(projectName, moduleType = 'module') {
@@ -49,16 +49,21 @@ function copyDirToDest(srcDir, destDir) {
       }
     });
   } catch (e) {
-    console.log(srcDir, ' : dir error');
+    console.log(e);
   }
 }
 
 // Init Project
-const projectName = process.argv[2];
-const workingDest = path.resolve(process.cwd(), projectName);
-fs.mkdirSync(workingDest);
+if (process.argv.length < 3 || process.argv[2] === '') {
+  console.error('Please input APP_NAME');
+} else {
+  const projectName = process.argv[2];
+  const workingDest = path.resolve(process.cwd(), projectName);
+  fs.mkdirSync(workingDest);
 
-// Copy Files to destination
-copyDirToDest('bp-dest', workingDest);
-const packageJson = JSON.stringify(makePackage(projectName), null, 4);
-fs.writeFileSync(`${workingDest}/package.json`, packageJson);
+  // Copy Files to destination
+  const __dirname = dirname(process.argv[1]);
+  copyDirToDest(path.resolve(__dirname, 'bp-dest'), workingDest);
+  const packageJson = JSON.stringify(makePackage(projectName), null, 4);
+  fs.writeFileSync(`${workingDest}/package.json`, packageJson);
+}
