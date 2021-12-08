@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import fs from 'fs';
-import path, { dirname } from 'path';
+import path from 'path';
+import { fileURLToPath } from 'url';
 import { dependencies, scripts, devDependencies } from './packageList.js';
 
 function makePackage(projectName, moduleType = 'module') {
@@ -62,7 +63,7 @@ if (process.argv.length < 3 || process.argv[2] === '') {
   fs.mkdirSync(workingDest);
 
   // Copy Files to destination
-  const __dirname = dirname(process.argv[1]);
+  const __dirname = fileURLToPath(path.dirname(import.meta.url));
   copyDirToDest(path.resolve(__dirname, 'bp-dest'), workingDest);
   const packageJson = JSON.stringify(makePackage(projectName), null, 4);
   fs.writeFileSync(`${workingDest}/package.json`, packageJson);
