@@ -11,6 +11,14 @@ export const dependencies = [
     name: 'react-router-dom',
     version: '^6.0.2',
   },
+  {
+    name: 'styled-components',
+    version: '^5.3.3',
+  },
+  {
+    name: 'styled-normalize',
+    version: '^8.0.7',
+  },
 ];
 
 export const scripts = [
@@ -146,14 +154,6 @@ export const devDependencies = [
   {
     name: 'style-loader',
     version: '^3.3.1',
-  },
-  {
-    name: 'styled-components',
-    version: '^5.3.3',
-  },
-  {
-    name: 'styled-normalize',
-    version: '^8.0.7',
   },
   {
     name: 'svg-react-loader',

@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
-import MoveLogo from 'assets/app-move.svg';
-import stopLogo from 'assets/app-logo.png';
+import React from 'react';
 import styled from 'styled-components';
+import stopLogo from 'assets/app-logo.png';
+import MoveLogo from 'assets/app-move.svg';
 
 interface MovingLogoInterface {
   clicked: boolean;
@@ -21,25 +21,23 @@ const Container = styled.div`
 
 const MovingLogo: React.FC<MovingLogoInterface> = (
   props: MovingLogoInterface
-) => {
-  return (
-    <Container>
-      {props.clicked ? (
-        <MoveLogo className="imgSize" />
-      ) : (
-        <img
-          className="cursor imgSize"
-          src={stopLogo}
-          onClick={() => {
-            props.setClicked(true);
-            setTimeout(() => {
-              props.setClicked(false);
-            }, 3000);
-          }}
-        />
-      )}
-    </Container>
-  );
-};
+) => (
+  <Container>
+    {props.clicked ? (
+      <MoveLogo className="imgSize" />
+    ) : (
+      <img
+        className="cursor imgSize"
+        src={stopLogo}
+        onClick={() => {
+          props.setClicked(true);
+          setTimeout(() => {
+            props.setClicked(false);
+          }, 3000);
+        }}
+      />
+    )}
+  </Container>
+);
 
 export default MovingLogo;
