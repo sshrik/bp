@@ -57,7 +57,10 @@
     "no-restricted-syntax": [
       "error",
       {
-        "selector": "ImportNamespaceSpecifier"
+        "selector": "ImportDeclaration:has(ImportNamespaceSpecifier) > Literal[value!=/\\.style$/]"
+      },
+      {
+        "selector": "ExportAllDeclaration"
       }
     ]
   },
