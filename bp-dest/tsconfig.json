@@ -2,7 +2,11 @@
   "compilerOptions": {
     "target": "es5",
     "jsx": "react-jsx",
-    
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
     "module": "commonjs",
     "rootDir": "./",
     "baseUrl": "src",
@@ -13,7 +17,7 @@
   },
   "include": [
     "src/**/*",
-    "custom.d.ts"
+    "src/types/*"
   ],
   "exclude": [
     "node_modules"
