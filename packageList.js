@@ -19,6 +19,18 @@ export const dependencies = [
     name: 'styled-normalize',
     version: '^8.0.7',
   },
+  {
+    name: 'i18next',
+    version: '^21.6.6',
+  },
+  {
+    name: 'react-i18next',
+    version: '^11.15.3',
+  },
+  {
+    name: '@babel/runtime',
+    version: '^7.16.7',
+  },
 ];
 
 export const scripts = [
@@ -46,6 +58,10 @@ export const devDependencies = [
   {
     name: '@babel/core',
     version: '^7.16.0',
+  },
+  {
+    name: '@babel/plugin-transform-runtime',
+    version: '^7.16.8',
   },
   {
     name: '@babel/preset-env',
