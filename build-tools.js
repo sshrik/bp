@@ -64,7 +64,7 @@ if (process.argv.length < 3 || process.argv[2] === '') {
 
   // Copy Files to destination
   const __dirname = fileURLToPath(path.dirname(import.meta.url));
-  copyDirToDest(path.resolve(__dirname, 'bp-dest'), workingDest);
+  copyDirToDest(path.resolve(__dirname, 'bp-client'), workingDest);
   const packageJson = JSON.stringify(makePackage(projectName), null, 4);
   fs.writeFileSync(`${workingDest}/package.json`, packageJson);
 }
