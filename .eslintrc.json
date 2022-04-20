@@ -18,14 +18,8 @@
           {
             "pattern": "./**",
             "group": "object"
-          },
-          {
-            "pattern": "react",
-            "group": "builtin",
-            "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["react"],
         "groups": ["builtin", "external", "parent", "sibling", "index", "type"],
         "newlines-between": "never",
         "alphabetize": {
