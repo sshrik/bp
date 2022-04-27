@@ -3,6 +3,8 @@
     "browser": true
   },
   "plugins": ["prettier"],
+  "parser": "babel-eslint",
+  "requireConfigFile": false,
   "extends": [
     "plugin:prettier/recommended",
     "airbnb-base"],
