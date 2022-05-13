@@ -1,0 +1,19 @@
+{
+  "name": "bp-typescript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.ts",
+  "scripts": {  
+    "dev": "ts-node index.ts"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^4.6.4"
+  },
+  "devDependencies": {
+    "@types/node": "^17.0.31",
+    "eslint": "^8.15.0",
+    "prettier": "^2.6.2"
+  }
+}
