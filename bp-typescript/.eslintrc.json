@@ -2,11 +2,10 @@
   "env" : {
     "browser": true
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
+  "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
-    "plugin:react/recommended", 
     "plugin:prettier/recommended",
     "airbnb-base"],
   "parser": "@typescript-eslint/parser",
@@ -32,7 +31,6 @@
             "position": "before"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["react"],
         "groups": ["builtin", "external", "parent", "sibling", "index", "type"],
         "newlines-between": "never",
         "alphabetize": {
@@ -46,9 +44,7 @@
       "ignorePackages",
       {
         "js": "never",
-        "jsx": "never",
-        "ts": "never",
-        "tsx": "never"
+        "ts": "never"
       }
     ],
     "no-restricted-imports": [
@@ -72,7 +68,6 @@
   "settings": {
     "import/resolver": {
       "node": {
-        "paths": ["src"],
         "extensions": [".js", ".jsx", ".ts", ".tsx"]
       }
     }

@@ -88,7 +88,7 @@ function copyProject(projectDir, workingDest, projectName, option) {
   const packageFile = makePackage(option, projectName);
 
   fs.writeFileSync(
-    path.resolve(__dirname, projectDir, 'package.json'),
+    path.resolve(workingDest, 'package.json'),
     JSON.stringify(packageFile, null, 2)
   );
 }
