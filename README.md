@@ -5,14 +5,26 @@ basic boiler plate project.
 시작하기 위해선 다음처럼 진행합니다.
 
 ```shell
+
+# To run typescript project
 npx @sshrik/bp APP_NAME
+
+# To run javascript project
+npx @sshrik/bp -t js APP_NAME
+
+# To run typescript react project
+npx @sshrik/bp -t react-ts APP_NAME
+
+# or you can use shorthand project type
+npx @sshrik/bp -t rts APP_NAME
+
+# After make project finish
 cd APP_NAME
 yarn
 ```
 
-## How to run?
+## How to run? - typescript react
 실행하기 위해선 다음처럼 사용합니다. 기본포트는 8000입니다.
-[다음 링크](https://bp.sshrik.com)와 같은 화면이 뜨면 성공!
 
 ```shell
 yarn run:dev # localhost:8000 으로 시작하기
@@ -20,15 +32,22 @@ yarn build # build
 yarn lint:fix # lint 고치기
 ```
 
+## How to run? - typescript / javascript
+hello world 를 출력하는 기본 프로젝트입니다.
+
+```shell
+yarn dev
+```
+
 ## 프로젝트에는
 이 프로젝트에는 다음과 같은 라이브러리들이 포함되어 있습니다.
 
+### Typescript React
 * Typescript
 * ES Lint + Prettier
 * React + React Router
 * styled-component
 * Webpack
-
 
 ## Code Rule
 이 프로젝트는 AirBnB Codestyle을 따릅니다. 그러나 개발 편의상 다른점이 있습니다.

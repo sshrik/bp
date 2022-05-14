@@ -2,7 +2,7 @@
   "name": "@sshrik/bp",
   "homepage": "https://github.com/sshrik/bp#readme",
   "author": "sshrik <chj878194@naver.com>",
-  "version": "0.1.11",
+  "version": "0.2.5",
   "keywords": [
     "boiler plate",
     "typescript",
@@ -12,9 +12,7 @@
   "scripts": {
     "bp": "node build-tools.js"
   },
-  "bin": {
-    "bp": "./build-tools.js"
-  },
+  "bin": "./build-tools.js",
   "bugs": {
     "url": "https://github.com/sshrik/bp/issues",
     "email": "chj878194@naver.com"

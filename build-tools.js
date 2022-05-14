@@ -34,7 +34,7 @@ function parseOption(option) {
   } else if (option === 'react-js' || option == 'rjs') {
     return PROJECT_TYPE.JS_REACT;
   } else if (option === 'express-ts' || option === 'ets') {
-    return PROJECT_TYPE.TS_REACT;
+    return PROJECT_TYPE.TS_EXPRESS;
   } else if (option === 'express-js' || option === 'ejs') {
     return PROJECT_TYPE.JS_EXPRESS;
   }
@@ -108,21 +108,23 @@ program
     const workingDest = path.resolve(process.cwd(), projectName);
     fs.mkdirSync(workingDest); // TODO: Except file already exist
 
-    switch (parseOption(option)) {
+    const projectType = option.type;
+
+    switch (parseOption(projectType)) {
       case PROJECT_TYPE.TS_BASE:
-        copyProject('bp-typescript', workingDest, projectName, option.type);
+        copyProject('bp-typescript', workingDest, projectName, projectType);
         break;
       case PROJECT_TYPE.JS_BASE:
-        copyProject('bp-javascript', workingDest, projectName, option.type);
+        copyProject('bp-javascript', workingDest, projectName, projectType);
         break;
       case PROJECT_TYPE.TS_REACT:
-        copyProject('bp-client', workingDest, projectName, option.type);
+        copyProject('bp-client', workingDest, projectName, projectType);
         break;
       case PROJECT_TYPE.TS_EXPRESS:
-        copyProject('bp-server', workingDest, projectName, option.type);
+        copyProject('bp-server', workingDest, projectName, projectType);
         break;
       default:
-        copyProject('bp-typescript', workingDest, projectName, option.type);
+        copyProject('bp-typescript', workingDest, projectName, projectType);
         break;
     }
   });
