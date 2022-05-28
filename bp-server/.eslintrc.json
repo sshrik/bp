@@ -12,7 +12,6 @@
   "rules": {
     "comma-dangle": "off",
     "no-use-before-define": "error",
-    "no-console": "off",
     "no-underscore-dangle": "off",
     "no-unused-vars": "off",
     "@typescript-eslint/no-unused-vars": ["error"],
@@ -56,12 +55,12 @@
     "no-restricted-syntax": [
       "error",
       {
-        "selector": "ImportDeclaration:has(ImportNamespaceSpecifier) > Literal[value!=/\\.style$/]",
-        "message": "import * 은 오직 filename.style 에서만 지정할 수 있습니다."
+        "selector": "ImportNamespaceSpecifier",
+        "message": "import * 은 사용할 수 없습니다."
       },
       {
         "selector": "ExportAllDeclaration",
-        "message": "export * / import * 은 사용할 수 없습니다."
+        "message": "export * 은 사용할 수 없습니다."
       }
     ]
   },
