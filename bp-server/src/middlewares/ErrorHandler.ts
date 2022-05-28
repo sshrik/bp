@@ -1,6 +1,6 @@
-import type { ErrorRequestHandler, Response } from 'express';
 import ErrorMapper from 'src/errors/ErrorMapper';
 import { ErrorResponse } from 'src/models/response';
+import type { ErrorRequestHandler, Response } from 'express';
 
 const ErrorHandler: ErrorRequestHandler = (
   err: ErrorMapper,

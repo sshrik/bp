@@ -1,14 +1,12 @@
-import express, { urlencoded } from 'express';
-import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
-import AuthRouter from 'src/routes/auth';
+import express, { urlencoded } from 'express';
 import ErrorHandler from 'src/middlewares/ErrorHandler';
+import AuthRouter from 'src/routes/auth';
 
 const app = express();
 
 dotenv.config();
 
-app.use(bodyParser.json());
 app.use(urlencoded({ extended: true }));
 
 const port = process.env.PORT;

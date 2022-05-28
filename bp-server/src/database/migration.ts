@@ -1,7 +1,7 @@
+import { join } from 'path';
 import { JSONFile, Low } from 'lowdb';
 import ErrorMapper from 'src/errors/ErrorMapper';
 import { UserDatabase } from 'src/models/database/user';
-import { join } from 'path';
 import { User } from 'src/types/user';
 
 const __dirname = process.cwd();
@@ -34,7 +34,6 @@ export async function checkUser({ id, pw }: User) {
     const { user } = db.data;
 
     return user.filter((user) => user.id === id && user.pw === pw).length === 1;
-  } else {
-    throw new ErrorMapper('ERR_DB', 'Database에 연결하지 못했습니다.', 500);
   }
+  throw new ErrorMapper('ERR_DB', 'Database에 연결하지 못했습니다.', 500);
 }

@@ -2,7 +2,9 @@ import { ErrorType } from 'src/types/error';
 
 class ErrorMapper {
   errorType: ErrorType;
+
   errorMessage: string;
+
   errorCode: number;
 
   constructor(errorType: ErrorType, errorMessage: string, errorCode: number) {
