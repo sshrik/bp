@@ -4,7 +4,7 @@ import errorBoundary from 'src/utils/errorBoundary';
 
 const authRouter = Router();
 
-authRouter.post('/logIn', errorBoundary(logInController));
+authRouter.get('/', errorBoundary(logInController));
 authRouter.post('/signIn', errorBoundary(signInController));
 
 export default authRouter;
