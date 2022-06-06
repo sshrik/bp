@@ -15,7 +15,8 @@
     "strict": true,
     "skipLibCheck": true,
     "moduleResolution": "node",
-    "sourceMap": true
+    "sourceMap": true,
+    "typeRoots": ["node-modules/@types", "./src/types/*.d.ts"]
   },
   "include": ["src/**/*", "index.ts"],
   "exclude": ["node_modules"]

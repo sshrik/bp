@@ -1,5 +1,5 @@
 {
-  "env" : {
+  "env": {
     "browser": true
   },
   "plugins": ["@typescript-eslint", "prettier"],
@@ -7,17 +7,20 @@
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:prettier/recommended",
-    "airbnb-base"],
+    "airbnb-base"
+  ],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "comma-dangle": "off",
     "no-use-before-define": "error",
     "no-underscore-dangle": "off",
     "no-unused-vars": "off",
+    "no-shadow": "off",
+    "@typescript-eslint/no-shadow": [ "error" ],
     "@typescript-eslint/no-unused-vars": ["error"],
-    "@typescript-eslint/no-unnecessary-type-constraint" : "off",
+    "@typescript-eslint/no-unnecessary-type-constraint": "off",
     "import/order": [
-      "error", 
+      "error",
       {
         "pathGroups": [
           {
@@ -47,7 +50,7 @@
       }
     ],
     "no-restricted-imports": [
-      "error", 
+      "error",
       {
         "patterns": ["..*"]
       }
