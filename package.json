@@ -2,7 +2,7 @@
   "name": "@sshrik/bp",
   "homepage": "https://github.com/sshrik/bp#readme",
   "author": "sshrik <chj878194@naver.com>",
-  "version": "0.2.6",
+  "version": "0.0.0-development",
   "keywords": [
     "boiler plate",
     "typescript",
@@ -10,7 +10,8 @@
   ],
   "description": "Basic Typescript React Boiler plate.",
   "scripts": {
-    "bp": "node build-tools.js"
+    "bp": "node build-tools.js",
+    "semantic-release": "semantic-release"
   },
   "bin": "./build-tools.js",
   "bugs": {
@@ -20,15 +21,23 @@
   "license": "MIT",
   "type": "module",
   "devDependencies": {
+    "@semantic-release/commit-analyzer": "^9.0.2",
+    "@semantic-release/npm": "^9.0.2",
+    "@semantic-release/release-notes-generator": "^10.0.3",
     "babel-eslint": "^10.1.0",
     "eslint": "^8.3.0",
     "eslint-config-airbnb": "^19.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-import": "^2.25.3",
     "eslint-plugin-prettier": "^4.0.0",
-    "prettier": "^2.4.1"
+    "prettier": "^2.4.1",
+    "semantic-release": "^20.1.0"
   },
   "dependencies": {
     "commander": "^9.2.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sshrik/bp.git"
   }
 }
