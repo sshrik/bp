@@ -3,7 +3,7 @@ name: 'beta-deploy'
 on:
   push:
     branches:
-    - main
+    - beta
 
 jobs:
   deploy:
