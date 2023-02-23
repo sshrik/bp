@@ -1,0 +1,29 @@
+name: 'beta-deploy'
+
+on:
+  push:
+    branches:
+    - beta
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout source code
+        uses: actions/checkout@v3
+        with:
+          ref: beta
+      
+      - name: Set Up Node version
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          
+      - name: Install Dependencies
+        run: yarn
+      
+      - name: Versioning
+        run: yarn semantic-release
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        
