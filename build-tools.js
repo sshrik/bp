@@ -11,6 +11,7 @@ function readJSON(jsonFileName) {
 }
 
 const tsReactPackage = readJSON('bp-client/package.json');
+const tsReactTailwindPackage = readJSON('bp-client-tailwind/package.json');
 const tsExpressPackage = readJSON('bp-server/package.json');
 const jsBasePackage = readJSON('bp-javascript/package.json');
 const tsBasePackage = readJSON('bp-typescript/package.json');
@@ -19,6 +20,7 @@ const PROJECT_TYPE = {
   TS_BASE: 'TS_BASE',
   JS_BASE: 'JS_BASE',
   TS_REACT: 'TS_REACT',
+  TS_REACT_TAILWIND: 'TS_REACT_TAILWIND',
   JS_REACT: 'JS_REACT',
   TS_EXPRESS: 'TS_EXPRESS',
   JS_EXPRESS: 'JS_EXPRESS',
@@ -31,6 +33,8 @@ function parseOption(option) {
     return PROJECT_TYPE.JS_BASE;
   } else if (option === 'react-ts' || option === 'rts') {
     return PROJECT_TYPE.TS_REACT;
+  } else if (option === 'react-ts-tailwind' || option === 'rtst') {
+    return PROJECT_TYPE.TS_REACT_TAILWIND;
   } else if (option === 'react-js' || option == 'rjs') {
     return PROJECT_TYPE.JS_REACT;
   } else if (option === 'express-ts' || option === 'ets') {
@@ -48,6 +52,8 @@ function makePackage(option, packageName) {
       return { ...jsBasePackage, name: packageName };
     case PROJECT_TYPE.TS_REACT:
       return { ...tsReactPackage, name: packageName };
+    case PROJECT_TYPE.TS_REACT_TAILWIND:
+      return { ...tsReactTailwindPackage, name: packageName };
     case PROJECT_TYPE.TS_EXPRESS:
       return { ...tsExpressPackage, name: packageName };
     default:
@@ -98,7 +104,7 @@ const program = new Command();
 program.option(
   '-t, --type <type>',
   'Type of project. Default basic typescript project.\n\
-    You can choose from ts, js, react-ts(rts), react-js(rjs), express-ts(ets), express-js(ejs)',
+    You can choose from ts, js, react-ts(rts), react-ts-tailwind(rtst), react-js(rjs), express-ts(ets), express-js(ejs)',
   'ts'
 );
 
@@ -120,6 +126,14 @@ program
         break;
       case PROJECT_TYPE.TS_REACT:
         copyProject('bp-client', workingDest, projectName, projectType);
+        break;
+      case PROJECT_TYPE.TS_REACT_TAILWIND:
+        copyProject(
+          'bp-client-tailwind',
+          workingDest,
+          projectName,
+          projectType
+        );
         break;
       case PROJECT_TYPE.TS_EXPRESS:
         copyProject('bp-server', workingDest, projectName, projectType);

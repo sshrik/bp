@@ -1,0 +1,91 @@
+{
+  "env" : {
+    "browser": true
+  },
+  "extends": [
+    "airbnb",
+    "plugin:@typescript-eslint/eslint-recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended", 
+    "prettier"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "rules": {
+    "comma-dangle": "off",
+    "function-paren-newline": "off",
+    "import/prefer-default-export" : "off",
+    "import/order": [
+      "error", 
+      {
+        "pathGroups": [
+          {
+            "pattern": "./**",
+            "group": "object"
+          },
+          {
+            "pattern": "react",
+            "group": "builtin",
+            "position": "before"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react"],
+        "groups": ["builtin", "external", "parent", "sibling", "index", "type"],
+        "newlines-between": "never",
+        "alphabetize": {
+          "order": "asc",
+          "caseInsensitive": true
+        }
+      }
+    ],
+    "import/extensions": [
+      "error",
+      "ignorePackages",
+      {
+        "js": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+      }
+    ],
+    "no-use-before-define": "error",
+    "no-underscore-dangle": "off",
+    "no-shadow": "off",
+    "no-restricted-imports": [
+      "error", 
+      {
+        "patterns": ["..*"]
+      }
+    ],
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportDeclaration:has(ImportNamespaceSpecifier) > Literal[value!=/\\.style$/]",
+        "message": "import * 은 오직 filename.style 에서만 지정할 수 있습니다."
+      },
+      {
+        "selector": "ExportAllDeclaration",
+        "message": "export * / import * 은 사용할 수 없습니다."
+      }
+    ],
+    "no-unused-vars": "off",
+    "react/jsx-filename-extension": "off",
+    "@typescript-eslint/no-unnecessary-type-constraint" : "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
+      }
+    ]
+  },
+  "settings": {
+    "import/resolver": {
+      "node": {
+        "paths": ["src"],
+        "extensions": [".js", ".jsx", ".ts", ".tsx"]
+      }
+    }
+  }
+}
