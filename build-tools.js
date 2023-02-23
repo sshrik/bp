@@ -97,7 +97,8 @@ const program = new Command();
 
 program.option(
   '-t, --type <type>',
-  'Type of project. Default basic typescript project.',
+  'Type of project. Default basic typescript project.\n\
+    You can choose from ts, js, react-ts(rts), react-js(rjs), express-ts(ets), express-js(ejs)',
   'ts'
 );
 
