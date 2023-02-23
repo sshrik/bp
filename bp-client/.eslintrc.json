@@ -2,22 +2,18 @@
   "env" : {
     "browser": true
   },
-  "plugins": ["react", "@typescript-eslint", "prettier"],
   "extends": [
+    "airbnb",
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
     "plugin:react/recommended", 
-    "plugin:prettier/recommended",
-    "airbnb-base"],
+    "prettier"
+  ],
   "parser": "@typescript-eslint/parser",
   "rules": {
     "comma-dangle": "off",
-    "no-use-before-define": "error",
-    "no-console": "off",
-    "no-underscore-dangle": "off",
-    "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"],
-    "@typescript-eslint/no-unnecessary-type-constraint" : "off",
+    "function-paren-newline": "off",
+    "import/prefer-default-export" : "off",
     "import/order": [
       "error", 
       {
@@ -51,6 +47,9 @@
         "tsx": "never"
       }
     ],
+    "no-use-before-define": "error",
+    "no-underscore-dangle": "off",
+    "no-shadow": "off",
     "no-restricted-imports": [
       "error", 
       {
@@ -66,6 +65,18 @@
       {
         "selector": "ExportAllDeclaration",
         "message": "export * / import * 은 사용할 수 없습니다."
+      }
+    ],
+    "no-unused-vars": "off",
+    "react/jsx-filename-extension": "off",
+    "@typescript-eslint/no-unnecessary-type-constraint" : "off",
+    "@typescript-eslint/no-shadow": ["error"],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "caughtErrorsIgnorePattern": "^_"
       }
     ]
   },

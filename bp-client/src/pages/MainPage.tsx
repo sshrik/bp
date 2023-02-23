@@ -3,6 +3,24 @@ import { useTranslation } from 'react-i18next';
 import * as S from 'components/Container.style';
 import MovingLogo from 'components/MovingLogo';
 
+interface SomeComponentProps {
+  onClick: (some: string) => void;
+  crock: string;
+}
+
+const SomeComponent: React.FC<SomeComponentProps> = ({ onClick, crock }) => {
+  const handleButtonClick = () => {
+    onClick('BUTTON');
+  };
+
+  return (
+    <div>
+      <button onClick={handleButtonClick}>Click me</button>
+      <p>{crock}</p>
+    </div>
+  );
+};
+
 const MainPage: React.FC = () => {
   const [clicked, setClicked] = useState(false);
   const { t } = useTranslation();
