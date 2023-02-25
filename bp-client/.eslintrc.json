@@ -2,6 +2,7 @@
   "env" : {
     "browser": true
   },
+  "root": true,
   "extends": [
     "airbnb",
     "plugin:@typescript-eslint/eslint-recommended",
@@ -67,7 +68,7 @@
         "message": "export * / import * 은 사용할 수 없습니다."
       }
     ],
-    "no-unused-vars": "off",
+    "no-unused-vars": "error",
     "react/jsx-filename-extension": "off",
     "@typescript-eslint/no-unnecessary-type-constraint" : "off",
     "@typescript-eslint/no-shadow": ["error"],

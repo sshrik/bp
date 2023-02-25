@@ -2,6 +2,7 @@
   "env" : {
     "browser": true
   },
+  "root": true,
   "extends": [
     "airbnb",
     "plugin:@typescript-eslint/eslint-recommended",

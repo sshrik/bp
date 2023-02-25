@@ -2,6 +2,7 @@
   "env" : {
     "browser": true
   },
+  "root": true,
   "plugins": ["prettier"],
   "extends": [
     "plugin:prettier/recommended",
