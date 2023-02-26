@@ -2,6 +2,7 @@
   "env" : {
     "browser": true
   },
+  "root": true,
   "plugins": ["@typescript-eslint", "prettier"],
   "extends": [
     "plugin:@typescript-eslint/eslint-recommended",
